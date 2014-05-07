@@ -45,8 +45,14 @@ build-type:          Simple
 -- Constraint on the version of Cabal needed to build this package.
 cabal-version:       >=1.10
 
+Library
+  Default-Language:     Haskell2010
+  GHC-Options:          -Wall
+  Exposed-Modules:      Game.Board
+  Build-Depends:        base >= 4 && < 5
+                      , HTTP >= 4000.2 && < 4000.3
 
-executable 2048AI
+executable 2048-AI
   -- .hs or .lhs file containing the Main module.
   main-is:             Main.hs
   
@@ -58,9 +64,7 @@ executable 2048AI
   
   -- Other library packages from which modules are imported.
   build-depends:       base >=4.7 && <4.8
-                     , json >= 0.7 && < 0.8
-                     , HTTP >= 4000.2 && < 4000.3
-                     -- , network-browser
+                     , 2048AI
                             
   
   -- Directories containing source files.
